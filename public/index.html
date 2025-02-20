@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ROYAL LUXURY - Votre site e-commerce de luxe</title>
+        <meta name="description" content="ROYAL LUXURY propose des produits de luxe exclusifs. Découvrez notre collection de montres élégantes, bracelets et plus encore.">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+     </head>
+      
+<body>
+  <header>
+    <h1>ROYAL LUXURY</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Produits</a></li>
+        <li><a href="#" onclick="afficherPanier()">Panier</a></li>
+        <li><a href="#" onclick="afficherContact()">Contact</a></li>
+        <li><a href="#" onclick="afficherWishlist()">Wishlist</a></li>
+      </ul>
+    </nav>
+    <input type="text" id="search-bar" placeholder="Rechercher un produit..." oninput="rechercherProduit()">
+  </header>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROYAL LUXURY</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  </head> 
+  <main>
+    <h2>Nos Produits</h2>
+    <div>
+        <label for="filtre-prix">Filtrer par prix :</label>
+        <select id="filtre-prix" onchange="filtrerProduitsParPrix()">
+          <option value="all">Tous les prix</option>
+          <option value="0-100">0-100€</option>
+          <option value="100-300">100-300€</option>
+          <option value="300-500">300-500€</option>
+          <option value="500+">500€+</option>
+        </select>
+      </div>
+    
+    <div id="produits">
+      <!-- Les cartes produits seront insérées ici par JavaScript -->
+    </div>
+    <div id="panier" style="display: none;">
+      <h2>Votre Panier</h2>
+      <div id="contenu-panier"></div>
+      <button onclick="procederAuPaiement()">Procéder au paiement</button>
+    </div>
+    <div id="paiement" style="display: none;">
+      <h2>Paiement</h2>
+      <form id="form-paiement" onsubmit="soumettrePaiement(event)">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" required>
+        <label for="email">Email :</label>
+        <input type="email" id="email" required>
+        <label for="adresse">Adresse :</label>
+        <input type="text" id="adresse" required>
+        <button type="submit">Payer</button>
+      </form>
+    </div>
+    <div id="contact" style="display: none;">
+        <h2>Contactez-nous</h2>
+        <form id="form-contact" onsubmit="soumettreContact(event)">
+          <label for="nom-contact">Nom :</label>
+          <input type="text" id="nom-contact" required>
+          <label for="email-contact">Email :</label>
+          <input type="email" id="email-contact" required>
+          <label for="message-contact">Message :</label>
+          <textarea id="message-contact" required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+  </main>
+    <!-- Ajout de la section des avis dans la page des détails du produit -->
+<div id="avis" style="display: none;">
+    <h3>Avis des clients</h3>
+    <div id="liste-avis"></div>
+    <h4>Laisser un avis</h4>
+    <form id="form-avis" onsubmit="soumettreAvis(event)">
+      <label for="nom-avis">Nom :</label>
+      <input type="text" id="nom-avis" required>
+      <label for="commentaire">Commentaire :</label>
+      <textarea id="commentaire" required></textarea>
+      <button type="submit">Soumettre</button>
+    </form>
+  </div>
+  </main>
+<!-- Ajout d'une section pour la wishlist -->
+<main>
+    <div id="wishlist" style="display: none;">
+      <h2>Votre Wishlist</h2>
+      <div id="contenu-wishlist"></div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 ROYAL LUXURY. Tous droits réservés.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
